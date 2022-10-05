@@ -87,6 +87,7 @@ impl Processor {
         }
 
         // missing spl_token check against token program key
+        // miss check *creator_info.owner against program_id
 
         if *authority_info.key != Self::authority_id(program_id, farm_id_info.key, farm_data.nonce)? {
             return Err(FarmError::InvalidProgramAddress.into());
