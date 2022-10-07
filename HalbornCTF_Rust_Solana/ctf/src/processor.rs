@@ -93,6 +93,8 @@ impl Processor {
             return Err(FarmError::InvalidProgramAddress.into());
         }
 
+        // not checking authority_info.issigned
+
         if amount != FARM_FEE {
             return Err(FarmError::InvalidFarmFee.into());
         }
