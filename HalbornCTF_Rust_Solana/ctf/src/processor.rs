@@ -101,7 +101,6 @@ impl Processor {
 
         let fee_vault_owner = TokenAccount::unpack_from_slice(&fee_vault_info.try_borrow_data()?)?.owner;
 
-
         if fee_vault_owner != *authority_info.key {
             return Err(FarmError::InvalidFeeAccount.into())
         }
